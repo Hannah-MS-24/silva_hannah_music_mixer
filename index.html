@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d0e8431583.js" crossorigin="anonymous"></script>
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <title>Music Mixer</title>
+</head>
+<body>
+    <h1 class="hidden">Music Mixer</h1>
+    <header class="grid-con" id="main-header">
+        <h2 class="hidden">Music and Sounds</h2>
+        <div id="logo" class="logo-menu col-start-2 col-end-4 m-col-start-1 m-col-end-3 l-col-start-1 l-col-end-3">
+            <img 
+                src="images/logo/logo.png"
+                sizes="(max-width: 500px) 100vw, 500px"
+                srcset="images/logo/logo_w_170.png 170w,
+                        images/logo/logo_w_365.png 365w,
+                        images/logo/logo_w_500.png 500w"
+                alt="logo">
+        </div>
+        <div id="menu" class="main-menu col-span-full m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Sounds</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-icons col-start-2 col-end-4 m-col-start-10 m-col-end-13 l-col-start-10 l-col-end-13">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-tiktok"></i>
+        </div>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="img-box disc" id="box1">
+                <img src="images/png/disc.png" alt="img-1" id="img1" draggable="true">
+            </div>
+            <div class="img-box girl" id="box2">
+                <img src="images/png/girl.png" alt="img-2" id="img2" draggable="true">
+            </div>
+            <div class="img-box boxes" id="box3">
+                <img src="images/png/music_boxes.png" alt="img-3" id="img3" draggable="true">
+            </div>
+            <div class="img-box play" id="box4">
+                <img src="images/png/play.png" alt="img-4" id="img4" draggable="true">
+            </div>
+            <div class="img-box sound" id="box5">
+                <img src="images/png/sound.png" alt="img-5" id="img5" draggable="true">
+            </div>
+            <div class="img-box waves" id="box6">
+                <img src="images/png/waves.png" alt="img-6" id="img6" draggable="true">
+            </div>
+        </div>
+
+        <div class="drop-boxes">
+            <div class="drop-box" id="drop-box1">
+                <p class="box-name">Classic</p>
+            </div>
+            <div class="drop-box" id="drop-box2">
+                <p class="box-name">Alternative</p>
+            </div>
+            <div class="drop-box" id="drop-box3">
+                <p class="box-name">Punk Rock</p>
+            </div>
+            <div class="drop-box" id="drop-box4">
+                <p class="box-name">Happy</p>
+            </div>
+            <div class="drop-box" id="drop-box5">
+                <p class="box-name">Joy</p>
+            </div>
+            <div class="drop-box" id="drop-box6">
+                <p class="box-name">Electronic</p>
+            </div>
+        </div>
+
+        <button id="resetButton">Reset</button>
+
+        <div id="audio-container">
+            <audio id="audio1" src="audio/disc_audio.mp3"></audio>
+            <audio id="audio2" src="audio/girl_audio.mp3"></audio>
+            <audio id="audio3" src="audio/boxes_audio.mp3"></audio>
+            <audio id="audio4" src="audio/play_audio.mp3"></audio>
+            <audio id="audio5" src="audio/sound_audio.mp3"></audio>
+            <audio id="audio6" src="audio/waves_audio.mp3"></audio>
+        </div>
+    </main>
+
+    <footer class="grid-con" id="footer">
+        <img class="logo-footer col-start-1 col-end-2 m-col-start-1 m-col-end-3 l-col-start-1 l-col-end-3"
+            src="images/logo/logo.png"
+            sizes="(max-width: 500px) 100vw, 500px"
+            srcset="images/logo/logo_w_170.png 170w,
+                    images/logo/logo_w_365.png 365w,
+                    images/logo/logo_w_500.png 500w"
+            alt="logo-footer">
+
+        <p class="contact col-start-3 col-end-5 m-col-start-10 m-col-end-13 l-col-start-10 l-col-end-13">
+            625 First St<br>
+            London, ON N5V 0B6<br>
+            p: +1 519-800-1887<br><br>
+            Phone: +1 (226) 386-3610<br>
+            E-mail: contato@swerve.com
+        </p>
+
+        <div class="social-icons-footer col-start-2 col-end-4 m-col-start-10 m-col-end-13 l-col-start-10 l-col-end-13">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-tiktok"></i>
+        </div>
+
+        <p class="footer-text col-span-full m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
+            All prices and services on this website and in our booking system are subject to the conditions in force at the time of publication and may be changed without prior notice. 
+            To confirm services, availability and prices, please contact us. ©2025 Swerve. 
+            All rights reserved. 
+            Privacy Policy.
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
