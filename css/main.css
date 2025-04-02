@@ -52,7 +52,7 @@
   
   #main-header ul li a:hover {
     color: blueviolet;
-    background-color: rgba(138, 43, 226, 0.1); /* Efeito hover sutil */
+    background-color: rgba(138, 43, 226, 0.1); 
     border-radius: 5px;
   }
   
@@ -86,8 +86,8 @@
   }
   
   #svg-box {
-    width: 90%; /* Ocupa 80% da largura do main */
-    height: 90%; /* Ocupa 80% da altura do main */
+    width: 90%; 
+    height: 90%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,10 +109,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    justify-items: center; /* Centraliza as imagens dentro da grid */
+    justify-items: center; 
     max-width: 800px;
     margin-left: auto;
-    margin-right: auto; /* Centraliza a grid no centro da página */
+    margin-right: auto; 
     margin-top: 50px;
   }
   
@@ -263,7 +263,7 @@
   
   .box-name {
       position: absolute;
-      bottom: 10px;  /* Ajuste a posição se necessário */
+      bottom: 10px;  
       font-size: 14px;
       font-weight: bold;
       color: #333;
@@ -372,7 +372,7 @@
   
     #main-header ul li a:hover {
       color: blueviolet;
-      background-color: rgba(138, 43, 226, 0.1); /* Efeito hover sutil */
+      background-color: rgba(138, 43, 226, 0.1); 
       border-radius: 5px;
     }
   
@@ -402,29 +402,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 900px; /* Ajuste para ocupar a altura total da tela */
-    }
+      height: 900px; 
   
     #svg-box {
-      display: flex; /* Usando flexbox para alinhar as imagens */
-      flex-wrap: wrap; /* Permite que as imagens se movam para a próxima linha, se necessário */
-      justify-content: center; /* Centraliza as imagens no eixo horizontal */
-      align-items: center; /* Alinha as imagens no eixo vertical */
-      gap: 20px; /* Espaçamento entre as imagens */
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      align-items: center;
+      gap: 20px; 
     }
   
-    /* Estilo para cada div contendo a imagem */
+ 
     #svg-box > div {
-      display: flex; /* Flexbox para que as imagens dentro de cada div sejam alinhadas */
+      display: flex;
       justify-content: center;
       align-items: center;
     }
   
-    /* Estilo específico para as imagens dentro de #svg-box */
+    
     #svg-box img {
-      border-radius: 10px; /* Arredonda as bordas das imagens */
-      max-width: 100%; /* Assegura que as imagens não ultrapassem o limite do seu contêiner */
-      height: auto; /* Mantém a proporção das imagens */
+      border-radius: 10px; 
+      max-width: 100%; 
+      height: auto; 
     }
   
     /* Footer */
