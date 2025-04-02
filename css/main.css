@@ -403,6 +403,7 @@
       justify-content: center;
       align-items: center;
       height: 900px; 
+    }
   
     #svg-box {
       display: flex; 
