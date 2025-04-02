@@ -2,7 +2,7 @@
 
 const dropBoxes = document.querySelectorAll(".drop-box");
 const images = document.querySelectorAll(".gallery img");
-const resetButton = document.getElementById("resetButton");
+const resetButton = document.querySelector("#resetButton"); 
 const gallery = document.querySelector(".gallery");
 
 const musicPaths = {
@@ -45,17 +45,15 @@ function drag(event) {
 function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("text");
-    let draggedImage = document.getElementById(data);
+    let draggedImage = document.querySelector(`[id="${data}"]`); 
 
-    // Check if the image belongs to this specific drop-box
-    let targetBox = event.target.closest(".drop-box"); // Ensure it's a valid drop-box
+    let targetBox = event.target.closest(".drop-box");
     if (targetBox && musicPaths[targetBox.id] === draggedImage.id) {
-        // Remove previous image (if any) and return it to gallery
         let existingImage = targetBox.querySelector("img");
         if (existingImage) {
             gallery.appendChild(existingImage);
         }
-        
+
         targetBox.appendChild(draggedImage);
         playMusic(targetBox.id);
     }
@@ -70,21 +68,21 @@ function playMusic(boxId) {
 
     let audioId = audioPaths[boxId];
     if (audioId) {
-        currentAudio = document.getElementById(audioId);
-        currentAudio.loop = true; // Ensures the music plays on loop
-        currentAudio.play();
+        currentAudio = document.querySelector(`[id="${audioId}"]`);
+        if (currentAudio) {
+            currentAudio.loop = true;
+            currentAudio.play();
+        }
     }
 }
 
 // Function to reset images and stop music
 function reset() {
-    // Reinserts images into their initial positions
     initialPositions.forEach(position => {
-        const img = document.getElementById(position.id);
-        position.parent.appendChild(img); // Reinserting image back to its original parent
+        const img = document.querySelector(`[id="${position.id}"]`); 
+        position.parent.appendChild(img);
     });
 
-    // Remove only images inside drop boxes, keeping text
     dropBoxes.forEach(box => {
         let imgInside = box.querySelector("img");
         if (imgInside) {
@@ -92,7 +90,6 @@ function reset() {
         }
     });
 
-    // Stop the music if there is any playing
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
