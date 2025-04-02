@@ -2,13 +2,7 @@
 
 const dropBoxes = document.querySelectorAll(".drop-box");
 const images = document.querySelectorAll(".gallery img");
-<<<<<<< HEAD
 const resetButton = document.querySelector("#resetButton"); 
-=======
-
-const resetButton = document.querySelector("#resetButton"); // Alterado
-
->>>>>>> 854a0580897d72b8fb5cd70ad1b8d926dee178c8
 const gallery = document.querySelector(".gallery");
 
 const musicPaths = {
@@ -51,14 +45,9 @@ function drag(event) {
 function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("text");
-<<<<<<< HEAD
+
     let draggedImage = document.querySelector(`[id="${data}"]`);
-=======
 
-    let draggedImage = document.querySelector(`[id="${data}"]`); // Alterado
-
-
->>>>>>> 854a0580897d72b8fb5cd70ad1b8d926dee178c8
     let targetBox = event.target.closest(".drop-box");
     if (targetBox && musicPaths[targetBox.id] === draggedImage.id) {
         let existingImage = targetBox.querySelector("img");
@@ -80,12 +69,8 @@ function playMusic(boxId) {
 
     let audioId = audioPaths[boxId];
     if (audioId) {
-<<<<<<< HEAD
         currentAudio = document.querySelector(`[id="${audioId}"]`); 
-=======
-
-        currentAudio = document.querySelector(`[id="${audioId}"]`); // Alterado
->>>>>>> 854a0580897d72b8fb5cd70ad1b8d926dee178c8
+        
         if (currentAudio) {
             currentAudio.loop = true;
             currentAudio.play();
@@ -96,13 +81,8 @@ function playMusic(boxId) {
 // Function to reset images and stop music
 function reset() {
     initialPositions.forEach(position => {
-<<<<<<< HEAD
+
         const img = document.querySelector(`[id="${position.id}"]`); 
-=======
-
-        const img = document.querySelector(`[id="${position.id}"]`); // Alterado
-
->>>>>>> 854a0580897d72b8fb5cd70ad1b8d926dee178c8
         position.parent.appendChild(img);
     });
 
