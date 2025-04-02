@@ -6,6 +6,15 @@ const resetButton = document.getElementById("resetButton");
 const gallery = document.querySelector(".gallery");
 
 const musicPaths = {
+    "drop-box1": "img1",
+    "drop-box2": "img2",
+    "drop-box3": "img3",
+    "drop-box4": "img4",
+    "drop-box5": "img5",
+    "drop-box6": "img6"
+};
+
+const audioPaths = {
     "drop-box1": "audio1",
     "drop-box2": "audio2",
     "drop-box3": "audio3",
@@ -22,7 +31,6 @@ const initialPositions = Array.from(images).map(img => ({
     parent: img.parentElement // Save the parent (container) of each image
 }));
 
-// Functions
 // Function to allow dragging over boxes
 function allowDrop(event) {
     event.preventDefault();
@@ -39,11 +47,17 @@ function drop(event) {
     let data = event.dataTransfer.getData("text");
     let draggedImage = document.getElementById(data);
 
-    // Checks if the box already has an image, removing it before adding the new one
-    if (event.target.classList.contains("drop-box")) {
-        event.target.innerHTML = ""; // Remove any previous image
-        event.target.appendChild(draggedImage);
-        playMusic(event.target.id);
+    // Check if the image belongs to this specific drop-box
+    let targetBox = event.target.closest(".drop-box"); // Ensure it's a valid drop-box
+    if (targetBox && musicPaths[targetBox.id] === draggedImage.id) {
+        // Remove previous image (if any) and return it to gallery
+        let existingImage = targetBox.querySelector("img");
+        if (existingImage) {
+            gallery.appendChild(existingImage);
+        }
+        
+        targetBox.appendChild(draggedImage);
+        playMusic(targetBox.id);
     }
 }
 
@@ -54,9 +68,10 @@ function playMusic(boxId) {
         currentAudio.currentTime = 0;
     }
 
-    let audioId = musicPaths[boxId];
+    let audioId = audioPaths[boxId];
     if (audioId) {
         currentAudio = document.getElementById(audioId);
+        currentAudio.loop = true; // Ensures the music plays on loop
         currentAudio.play();
     }
 }
@@ -69,8 +84,13 @@ function reset() {
         position.parent.appendChild(img); // Reinserting image back to its original parent
     });
 
-    // Clear all drop boxes
-    dropBoxes.forEach(box => box.innerHTML = "");
+    // Remove only images inside drop boxes, keeping text
+    dropBoxes.forEach(box => {
+        let imgInside = box.querySelector("img");
+        if (imgInside) {
+            imgInside.remove();
+        }
+    });
 
     // Stop the music if there is any playing
     if (currentAudio) {
